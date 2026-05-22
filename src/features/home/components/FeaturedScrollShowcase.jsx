@@ -64,7 +64,7 @@ function Card({ cat, i, hueA, hueB, icon, isOpen, onToggle }) {
         >
             {/* The responsive geometric background splash */}
             <div 
-                className="absolute bottom-[-15px] md:bottom-[-30px] w-[100%] max-w-[960px] h-[85%] md:h-[80%] opacity-85 rounded-[32px] md:rounded-[40px] origin-center will-change-transform"
+                className="absolute bottom-[-15px] md:bottom-[-30px] w-[88%] sm:w-[95%] md:w-[100%] max-w-[960px] h-[85%] md:h-[80%] opacity-85 rounded-[32px] md:rounded-[40px] origin-center will-change-transform"
                 style={{ background, transform: "rotate(-6deg)" }} 
             />
             
@@ -72,7 +72,7 @@ function Card({ cat, i, hueA, hueB, icon, isOpen, onToggle }) {
             <motion.div 
                 style={{ transformOrigin: "10% 60%", zIndex: 10, willChange: "transform" }}
                 variants={cardVariants} 
-                className="w-[90%] max-w-[920px] h-[460px] sm:h-[500px] md:h-[560px] flex flex-col overflow-hidden bg-white shadow-2xl border border-stone-200/50 transform-gpu relative rounded-[20px] md:rounded-[24px]"
+                className="w-[78%] sm:w-[85%] md:w-[90%] max-w-[920px] h-[460px] sm:h-[500px] md:h-[560px] flex flex-col overflow-hidden bg-white shadow-2xl border border-stone-200/50 transform-gpu relative rounded-[20px] md:rounded-[24px]"
             >
                 {/* Product Image Section */}
                 <div className="h-[200px] sm:h-[240px] md:h-[320px] w-full relative overflow-hidden bg-stone-100 shrink-0">
@@ -91,7 +91,7 @@ function Card({ cat, i, hueA, hueB, icon, isOpen, onToggle }) {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-5 md:p-8 flex-1 flex flex-col justify-between bg-stone-50/50">
+                <div className="p-4 sm:p-6 md:p-8 flex-1 flex flex-col justify-between bg-stone-50/50">
                     <div>
                         <span className="text-[9px] md:text-[11px] tracking-[0.2em] font-accent uppercase text-amber-700/80 font-bold block mb-1 md:mb-1.5">
                             Premium Sourcing
