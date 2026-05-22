@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Container, SectionHeader } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
 import { CATEGORIES } from '@/data';
+import { cn } from '@/lib/cn';
 
 export default function CategoriesShowcase() {
   return (
@@ -19,12 +20,23 @@ export default function CategoriesShowcase() {
           />
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {CATEGORIES.map((cat) => (
-            <StaggerItem key={cat.id}>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 auto-rows-[250px] gap-6">
+          {CATEGORIES.map((cat, index) => {
+            const isFeatured = index === 0;
+            const isTall = index === 2 || index === 5;
+            
+            return (
+            <StaggerItem 
+              key={cat.id}
+              className={cn(
+                isFeatured ? "md:col-span-2 md:row-span-2" : 
+                isTall ? "md:col-span-1 md:row-span-2" : 
+                "md:col-span-1 md:row-span-1"
+              )}
+            >
               <Link
                 to={`/products/${cat.slug}`}
-                className="group block relative rounded-3xl overflow-hidden aspect-[4/3.5] img-zoom border border-gray-100/80 shadow-[0_8px_30px_rgb(0,0,0,0.015)] hover:shadow-[0_20px_45px_rgba(200,168,80,0.1)] hover:border-gold-500/20 transition-all duration-500 bg-white"
+                className="group block relative rounded-3xl overflow-hidden h-full w-full img-zoom border border-gray-100/80 shadow-[0_8px_30px_rgb(0,0,0,0.015)] hover:shadow-[0_20px_45px_rgba(200,168,80,0.1)] hover:border-gold-500/20 transition-all duration-500 bg-white"
               >
                 {/* Image */}
                 <div className="absolute inset-0 w-full h-full">
@@ -65,7 +77,7 @@ export default function CategoriesShowcase() {
                 </div>
               </Link>
             </StaggerItem>
-          ))}
+          )})}
         </StaggerContainer>
       </Container>
     </section>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Globe, Shield, Award, Package, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Globe, Shield, Award, Package, ShieldCheck, Plane } from 'lucide-react';
 import { Container, Button } from '@/components/ui';
 
 export default function HeroSection() {
@@ -127,8 +127,20 @@ export default function HeroSection() {
                       <span className="text-emerald-200/50">Origin</span>
                       <span className="text-white font-medium">India (Kolkata Port)</span>
                     </div>
-                    <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
-                      <div className="bg-gradient-to-r from-gold-500 to-emerald-500 h-full w-[90%] rounded-full" />
+                    <div className="relative w-full h-6 mt-2 flex items-center overflow-hidden">
+                      {/* Straight tracking line */}
+                      <div className="absolute inset-x-0 top-1/2 border-t-[1.5px] border-dashed border-white/20" />
+                      
+                      <motion.div
+                        className="absolute text-gold-400 top-1/2 -translate-y-1/2 flex items-center justify-center bg-emerald-950 px-1"
+                        initial={{ left: '-10%' }}
+                        animate={{ left: '110%' }}
+                        transition={{
+                          left: { repeat: Infinity, duration: 4, ease: "linear" }
+                        }}
+                      >
+                        <Plane size={14} className="transform rotate-45" />
+                      </motion.div>
                     </div>
                   </div>
 

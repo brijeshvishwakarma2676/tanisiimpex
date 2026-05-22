@@ -1,4 +1,5 @@
 import { cn } from '@/lib/cn';
+export { default as LazySection } from './LazySection';
 
 /* ===== Button ===== */
 const buttonVariants = {

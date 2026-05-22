@@ -13,11 +13,11 @@ export default {
           500: '#10b981',
         },
         gold: {
-          300: '#e0ca80',
-          400: '#d4b968',
-          500: '#c8a850',
-          600: '#b89530',
-          700: '#a07d20',
+          300: '#EAE1D0',
+          400: '#D5C4A1',
+          500: '#C1A173',
+          600: '#A6824D',
+          700: '#8A693B',
         },
         navy: {
           950: '#0a0e1a',
@@ -27,9 +27,9 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['"Cormorant Garamond"', 'serif'],
         body: ['Inter', 'sans-serif'],
-        accent: ['Manrope', 'sans-serif'],
+        accent: ['"Plus Jakarta Sans"', 'sans-serif'],
       },
       fontSize: {
         hero: ['clamp(2.5rem, 5vw, 4.5rem)', { lineHeight: '1.1', fontWeight: '800' }],
@@ -46,11 +46,10 @@ export default {
         '3xl': '1.5rem',
       },
       boxShadow: {
-        premium: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-        card: '0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)',
-        elevated: '0 10px 40px -10px rgba(0,0,0,0.15)',
-        gold: '0 0 40px rgba(200,168,80,0.15)',
-        'gold-lg': '0 0 60px rgba(200,168,80,0.25)',
+        'card': '0 10px 40px -10px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05)',
+        'card-hover': '0 20px 50px -15px rgba(0,0,0,0.15), 0 2px 10px rgba(0,0,0,0.05)',
+        'premium': '0 30px 60px -15px rgba(193,161,115,0.15), 0 0 20px rgba(193,161,115,0.05)',
+        'glow': '0 0 20px rgba(193,161,115,0.3)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

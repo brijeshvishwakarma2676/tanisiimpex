@@ -53,7 +53,7 @@ export default function Navbar() {
         )}
       >
         <nav className="max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex items-center justify-between w-full">
+          <div className="flex items-center justify-between w-full gap-4 lg:gap-8 xl:gap-12">
             {/* Elegant luxury Logo */}
             <Link to="/" className="flex items-center gap-3 shrink-0 group">
               <div className="relative">
@@ -85,8 +85,8 @@ export default function Navbar() {
                       className={cn(
                         'flex items-center gap-1 px-3 py-2 rounded-full text-[11px] xl:text-xs font-semibold uppercase tracking-wider font-accent transition-all duration-300 whitespace-nowrap border border-transparent',
                         location.pathname.startsWith('/products')
-                          ? 'text-gold-400 bg-white/5 border-gold-500/10'
-                          : 'text-white/80 hover:text-white hover:bg-white/5'
+                          ? 'text-gold-400'
+                          : 'text-white/80 hover:text-white'
                       )}
                     >
                       {link.label}
@@ -124,8 +124,8 @@ export default function Navbar() {
                     className={cn(
                       'px-3 py-2 rounded-full text-[11px] xl:text-xs font-semibold uppercase tracking-wider font-accent transition-all duration-300 border whitespace-nowrap',
                       location.pathname === link.path
-                        ? 'text-gold-400 bg-white/5 border-gold-500/10'
-                        : 'text-white/80 hover:text-white hover:bg-white/5 border-transparent'
+                        ? 'text-gold-400'
+                        : 'text-white/80 hover:text-white'
                     )}
                   >
                     {link.label}
