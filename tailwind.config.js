@@ -5,12 +5,12 @@ export default {
     extend: {
       colors: {
         emerald: {
-          950: '#022c22',
-          900: '#064e3b',
-          800: '#065f46',
-          700: '#047857',
-          600: '#059669',
-          500: '#10b981',
+          950: '#0B1522',
+          900: '#0F1E2E',
+          800: '#1A2F45',
+          700: '#26425E',
+          600: '#36597A',
+          500: '#4A7599',
         },
         gold: {
           300: '#EAE1D0',
@@ -53,11 +53,11 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-gradient': 'linear-gradient(135deg, #022c22 0%, #064e3b 40%, #0f172a 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #0B1522 0%, #0F1E2E 40%, #0f172a 100%)',
         'gold-gradient': 'linear-gradient(135deg, #c8a850 0%, #e0ca80 50%, #c8a850 100%)',
         'gold-text': 'linear-gradient(135deg, #d4b968 0%, #e0ca80 40%, #c8a850 100%)',
-        'emerald-gradient': 'linear-gradient(135deg, #064e3b 0%, #047857 100%)',
-        'dark-gradient': 'linear-gradient(180deg, #022c22 0%, #0a0e1a 100%)',
+        'emerald-gradient': 'linear-gradient(135deg, #0F1E2E 0%, #1A2F45 100%)',
+        'dark-gradient': 'linear-gradient(180deg, #0B1522 0%, #0a0e1a 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',

@@ -24,7 +24,7 @@
   }
 
   ::selection {
-    background-color: #064e3b;
+    background-color: #0B1522;
     color: #e0ca80;
   }
 
@@ -33,7 +33,7 @@
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #022c22;
+    background: #0B1522;
   }
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #c8a850, #b89530);
@@ -54,9 +54,9 @@
     background-clip: text;
   }
 
-  /* Emerald gradient text */
+  /* Emerald gradient text (now slate navy) */
   .text-emerald-gradient {
-    background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%);
+    background: linear-gradient(135deg, #0F1E2E 0%, #36597A 50%, #0B1522 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -215,3 +215,159 @@
   .animate-delay-400 { animation-delay: 400ms; }
   .animate-delay-500 { animation-delay: 500ms; }
 }
+
+/* ===== Premium UI Enhancements ===== */
+@layer components {
+
+  /* Animated gold gradient border on dark cards */
+  .gold-border-animate {
+    position: relative;
+    border-radius: inherit;
+  }
+  .gold-border-animate::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(200,168,80,0.6), rgba(200,168,80,0.05) 40%, rgba(6,78,59,0.4) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .gold-border-animate:hover::after {
+    opacity: 1;
+  }
+
+  /* Shimmer skeleton loader effect */
+  .shimmer {
+    background: linear-gradient(90deg, #f0ede8 25%, #e8e4dd 50%, #f0ede8 75%);
+    background-size: 200% 100%;
+    animation: shimmer-sweep 1.5s infinite;
+  }
+  @keyframes shimmer-sweep {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Floating pulse: live dot for active status indicators */
+  .pulse-live {
+    position: relative;
+  }
+  .pulse-live::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: inherit;
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(2.2); opacity: 0; }
+  }
+
+  /* Scroll progress indicator (applied via JS) */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #c8a850, #e0ca80, #c8a850);
+    z-index: 9999;
+    transform-origin: left;
+    transition: width 0.1s linear;
+  }
+
+  /* Magnetic hover button shimmer */
+  .btn-magnetic {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-magnetic:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  /* Frosted glass header (used when scrolled) */
+  .nav-glass-scrolled {
+    background: rgba(11, 20, 38, 0.96) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(200, 168, 80, 0.1) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 0 0 0.5px rgba(200, 168, 80, 0.06) !important;
+  }
+
+  /* Card with inner top light reflection */
+  .card-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200, 168, 80, 0.5), transparent);
+    transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card-shine:hover::before {
+    left: 140%;
+  }
+
+  /* Number ticker font for stats */
+  .font-ticker {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+  }
+
+  /* Section fade-in bottom glow for context separation */
+  .section-glow-bottom {
+    box-shadow: 0 30px 60px -30px rgba(200, 168, 80, 0.08);
+  }
+
+  /* Premium tag / chip for product labels */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(200, 168, 80, 0.06);
+    border: 1px solid rgba(200, 168, 80, 0.15);
+    color: #9a7c2c;
+    transition: all 0.2s ease;
+  }
+  .chip:hover {
+    background: rgba(200, 168, 80, 0.12);
+    border-color: rgba(200, 168, 80, 0.3);
+    color: #c8a850;
+  }
+
+  /* Tinted image overlay utility */
+  .img-tint {
+    filter: saturate(0.9) contrast(1.05);
+    transition: filter 0.5s ease;
+  }
+  .img-tint:hover {
+    filter: saturate(1.1) contrast(1.0);
+  }
+
+  /* Elevated card - deeper, crisper than hover-lift */
+  .card-elevated {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 10px 30px -10px rgba(200,168,80,0.05);
+    transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease;
+  }
+  .card-elevated:hover {
+    box-shadow: 0 20px 60px -15px rgba(200,168,80,0.12), 0 8px 25px -8px rgba(0,0,0,0.06);
+    transform: translateY(-4px);
+    border-color: rgba(200, 168, 80, 0.2) !important;
+  }
+}
+

@@ -16,6 +16,8 @@ const ContactPage = lazy(() => import('@/features/contact/ContactPage'));
 const BulkInquiryPage = lazy(() => import('@/features/inquiry/BulkInquiryPage'));
 const GalleryPage = lazy(() => import('@/features/gallery/GalleryPage'));
 
+import ErrorPage from '@/features/errors/ErrorPage';
+
 // Loading fallback
 function PageLoader() {
   return (
@@ -35,6 +37,7 @@ function SuspenseWrapper({ children }) {
 export const router = createBrowserRouter([
   {
     element: <PublicLayout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <SuspenseWrapper><HomePage /></SuspenseWrapper> },
       { path: 'about', element: <SuspenseWrapper><AboutPage /></SuspenseWrapper> },
@@ -48,6 +51,7 @@ export const router = createBrowserRouter([
       { path: 'contact', element: <SuspenseWrapper><ContactPage /></SuspenseWrapper> },
       { path: 'bulk-inquiry', element: <SuspenseWrapper><BulkInquiryPage /></SuspenseWrapper> },
       { path: 'gallery', element: <SuspenseWrapper><GalleryPage /></SuspenseWrapper> },
+      { path: '*', element: <ErrorPage /> },
     ],
   },
 ]);

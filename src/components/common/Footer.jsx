@@ -9,7 +9,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#022c22] text-white relative overflow-hidden border-t border-white/5">
+    <footer className="bg-[#0B1522] text-white relative overflow-hidden border-t border-white/5">
       {/* Decorative dynamic top line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/25 to-transparent" />
 
@@ -25,7 +25,7 @@ export default function Footer() {
           <Link to="/" className="flex flex-col items-center gap-4 md:gap-5 group">
             <img src="/images/logo.png" alt="Tanisi Impex" className="h-28 md:h-40 w-auto transition-transform duration-300 group-hover:scale-105" />
             <div>
-              <h3 className="font-display font-black text-xl md:text-2xl tracking-widest uppercase">TANISI IMPEX</h3>
+              <h3 className="font-display font-black text-xl md:text-2xl tracking-widest uppercase">TANISI IMPEX PVT. LTD.</h3>
               <p className="text-gold-500 text-[10px] md:text-xs font-accent tracking-widest font-bold uppercase mt-1 md:mt-2">India to the World</p>
             </div>
           </Link>

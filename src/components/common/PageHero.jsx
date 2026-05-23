@@ -4,10 +4,10 @@ import { Container } from '@/components/ui';
 
 export default function PageHero({ title, subtitle, breadcrumbs = [] }) {
   return (
-    <section className="relative bg-[#022c22] overflow-hidden border-b border-white/5">
+    <section className="relative bg-[#0B1522] overflow-hidden border-b border-white/5">
       {/* Dynamic luxury dark background overlay pattern */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#022c22]/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0B1522]/70" />
 
       {/* Modern High-End Radial Lights */}
       <div className="absolute top-1/2 right-[10%] w-[350px] h-[350px] bg-emerald-600/10 rounded-full blur-[100px] pointer-events-none" />

@@ -109,7 +109,7 @@ export default function CertificationsPage() {
       </section>
 
       {/* Security & Confidentiality Policy Banner */}
-      <section className="py-20 bg-[#022c22] relative overflow-hidden">
+      <section className="py-20 bg-[#0B1522] relative overflow-hidden">
         {/* Glowing backdrop */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent" />

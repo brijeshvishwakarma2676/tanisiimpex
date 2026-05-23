@@ -5,22 +5,22 @@ import { Container, Button } from '@/components/ui';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[100vh] flex items-center bg-emerald-950 overflow-hidden pt-20 lg:pt-0">
+    <section className="relative min-h-[75vh] lg:min-h-[85vh] flex items-center bg-[#0B1522] overflow-hidden pt-8 lg:pt-0">
       {/* Premium dark grid pattern with clean styling */}
       <div className="absolute inset-0 grid-pattern opacity-40" />
 
       {/* Modern High-End Radial Lights */}
-      <div className="absolute top-1/4 right-[10%] w-[600px] h-[600px] bg-emerald-700/20 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-[5%] w-[500px] h-[500px] bg-gold-600/10 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/4 right-[10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-[5%] w-[500px] h-[500px] bg-gold-600/8 rounded-full blur-[130px] pointer-events-none" />
 
       {/* Decorative luxury abstract lines (Stripe/Linear style) */}
       <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-25 pointer-events-none hidden lg:block">
-        <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full border border-emerald-500/10" />
-        <div className="absolute top-[-10%] right-[-5%] w-[700px] h-[700px] rounded-full border border-emerald-400/5" />
+        <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full border border-slate-700/10" />
+        <div className="absolute top-[-10%] right-[-5%] w-[700px] h-[700px] rounded-full border border-slate-800/5" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full border border-gold-500/10" />
       </div>
 
-      <Container className="relative z-10 py-12 lg:py-24">
+      <Container className="relative z-10 py-10 lg:py-16">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-8">
             {/* Elegant glass pill badge */}
@@ -78,7 +78,7 @@ export default function HeroSection() {
 
             {/* Modern micro-features */}
             <motion.div
-              className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-8 border-t border-emerald-900/40 max-w-xl"
+              className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-8 border-t border-white/10 max-w-xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -91,9 +91,9 @@ export default function HeroSection() {
                 <div key={label} className="space-y-1">
                   <div className="flex items-center gap-2">
                     <Icon size={16} className="text-gold-400" />
-                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-200">{label}</span>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-200">{label}</span>
                   </div>
-                  <p className="text-xs text-emerald-100/40 pl-6">{sub}</p>
+                  <p className="text-xs text-slate-400/60 pl-6">{sub}</p>
                 </div>
               ))}
             </motion.div>
@@ -116,7 +116,7 @@ export default function HeroSection() {
                     <span className="text-[10px] font-semibold uppercase tracking-widest text-gold-400">Export Registry</span>
                     <h3 className="text-lg font-display font-bold text-white">Tanisi Impex Global</h3>
                   </div>
-                  <span className="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-semibold uppercase tracking-wider border border-emerald-500/20">
+                  <span className="px-2.5 py-1 rounded bg-gold-500/10 text-gold-400 text-[10px] font-semibold uppercase tracking-wider border border-gold-500/20">
                     Live Status
                   </span>
                 </div>
@@ -124,7 +124,7 @@ export default function HeroSection() {
                 <div className="space-y-4">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/5 space-y-2">
                     <div className="flex justify-between text-xs">
-                      <span className="text-emerald-200/50">Consignment Route</span>
+                      <span className="text-slate-400/50">Consignment Route</span>
                       <span className="text-white font-medium text-[10px] uppercase tracking-wider">India Hubs ➔ Worldwide & Domestic</span>
                     </div>
                     <div className="relative w-full h-6 mt-2 flex items-center overflow-hidden">
@@ -132,7 +132,7 @@ export default function HeroSection() {
                       <div className="absolute inset-x-0 top-1/2 border-t-[1.5px] border-dashed border-white/20" />
                       
                       <motion.div
-                        className="absolute text-gold-400 top-1/2 -translate-y-1/2 flex items-center justify-center bg-emerald-950 px-1"
+                        className="absolute text-gold-400 top-1/2 -translate-y-1/2 flex items-center justify-center bg-[#0B1522] px-1"
                         initial={{ left: '-10%' }}
                         animate={{ left: '110%' }}
                         transition={{
@@ -146,18 +146,18 @@ export default function HeroSection() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-                      <span className="text-[9px] text-emerald-200/50 uppercase block tracking-wider">Global Reach</span>
+                      <span className="text-[9px] text-slate-400/50 uppercase block tracking-wider">Global Reach</span>
                       <span className="text-sm font-display font-bold text-white uppercase">50+ Countries</span>
                     </div>
                     <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-                      <span className="text-[9px] text-emerald-200/50 uppercase block tracking-wider">Domestic Distribution</span>
+                      <span className="text-[9px] text-slate-400/50 uppercase block tracking-wider">Domestic Distribution</span>
                       <span className="text-sm font-display font-bold text-white uppercase">Pan-India Cargo</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-xs text-emerald-200/50">Need direct consultation?</span>
+                  <span className="text-xs text-slate-400/50">Need direct consultation?</span>
                   <Link to="/bulk-inquiry" className="text-xs font-semibold text-gold-400 hover:text-gold-300 flex items-center gap-1">
                     RFQ Portal <ArrowRight size={14} />
                   </Link>
@@ -169,7 +169,7 @@ export default function HeroSection() {
       </Container>
 
       {/* Elegant smooth bottom wave separation */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#FAF9F6] to-transparent pointer-events-none" />
     </section>
   );
 }

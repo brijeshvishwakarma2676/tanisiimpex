@@ -5,12 +5,19 @@ import { WHY_CHOOSE_US } from '@/data';
 
 const iconMap = { Shield, TrendingDown, Package, Truck, BarChart3, Headphones };
 
+const chipLabels = {
+  'Certified Quality': 'ISO Verified',
+  'Competitive Pricing': 'Best-in-Class',
+  'Custom Packaging': 'OEM Ready',
+  'Reliable Logistics': 'On-Time Guaranteed',
+  'Scalable Supply': 'Flexible MOQ',
+  'Dedicated Support': '24 / 7 Active',
+};
+
 export default function WhyChooseUs() {
   return (
-    <section className="py-section bg-[#FAF9F6] relative overflow-hidden">
+    <section className="py-section bg-[#FAF9F6] relative overflow-hidden section-glow-bottom">
       <div className="absolute inset-0 dot-pattern opacity-30 pointer-events-none" />
-
-      {/* Decorative luxury radial background ambient light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <Container className="relative z-10">
@@ -27,27 +34,32 @@ export default function WhyChooseUs() {
             const Icon = iconMap[item.icon];
             return (
               <StaggerItem key={i}>
-                <div className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-[0_12px_40px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_30px_60px_-15px_rgba(200,168,80,0.12)] hover:border-gold-500/30 transition-all duration-500 group h-full relative overflow-hidden flex flex-col justify-between">
-                  {/* Modern corner light highlight */}
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-gold-500/10 to-transparent rounded-tr-3xl transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
-                  
+                <div className="bg-white rounded-3xl p-8 border border-gold-500/10 card-elevated card-shine h-full relative overflow-hidden flex flex-col justify-between group">
+                  {/* Top corner glow on hover */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-gold-500/8 to-transparent rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
                   <div>
-                    {/* Unique rounded gradient container for modern look */}
-                    <div className="w-14 h-14 rounded-2xl bg-emerald-950/5 border border-emerald-950/10 flex items-center justify-center mb-8 group-hover:bg-emerald-950 group-hover:scale-105 transition-all duration-300">
-                      <Icon size={24} className="text-emerald-800 group-hover:text-gold-400 transition-colors duration-300" />
+                    <div className="flex justify-between items-start mb-8">
+                      <div className="w-14 h-14 rounded-2xl bg-emerald-950/5 border border-emerald-950/10 flex items-center justify-center group-hover:bg-emerald-950 group-hover:scale-110 transition-all duration-300">
+                        <Icon size={24} className="text-emerald-800 group-hover:text-gold-400 transition-colors duration-300" />
+                      </div>
+                      <span className="chip">{chipLabels[item.title] || 'Verified'}</span>
                     </div>
 
-                    <h3 className="text-lg font-display font-extrabold text-gray-900 mb-3 tracking-wide group-hover:text-emerald-950 transition-colors">
+                    <h3 className="text-lg font-display font-extrabold text-emerald-950 mb-3 tracking-wide group-hover:text-emerald-800 transition-colors">
                       {item.title}
                     </h3>
-                    
-                    <p className="text-sm text-gray-500 font-body leading-relaxed">
+
+                    <p className="text-sm text-emerald-950/55 font-body leading-relaxed">
                       {item.description}
                     </p>
                   </div>
 
-                  {/* Sleek bottom active border accent */}
-                  <div className="mt-8 pt-4 border-t border-gray-100/50 flex items-center text-xs font-semibold tracking-wider font-accent uppercase text-gray-400 group-hover:text-gold-600 transition-colors duration-300">
+                  <div className="mt-8 pt-4 border-t border-gold-500/8 flex items-center gap-2 text-xs font-semibold tracking-wider font-accent uppercase text-emerald-950/30 group-hover:text-gold-600 transition-colors duration-300">
+                    <span className="relative flex h-2 w-2">
+                      <span className="pulse-live absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+                    </span>
                     Compliant Framework
                   </div>
                 </div>
@@ -59,3 +71,6 @@ export default function WhyChooseUs() {
     </section>
   );
 }
+
+
+

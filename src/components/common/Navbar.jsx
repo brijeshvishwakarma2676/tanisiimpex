@@ -8,12 +8,18 @@ import { Button } from '@/components/ui';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setScrolled(scrollTop > 20);
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -25,12 +31,18 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Scroll progress bar */}
+      <div
+        className="scroll-progress"
+        style={{ width: `${scrollProgress}%` }}
+      />
+
       {/* Exquisite minimal top ticker bar */}
-      <div className="hidden lg:block bg-[#022c22] text-white/60 text-xs py-2.5 border-b border-white/5 relative z-50 w-full">
+      <div className="hidden lg:block bg-[#0B1522] text-white/60 text-xs py-2.5 border-b border-white/5 relative z-50 w-full">
         <div className="max-w-7xl w-full mx-auto px-12 flex justify-between items-center font-accent uppercase tracking-wider font-semibold">
           <div className="flex items-center gap-2 text-emerald-400">
             <Globe size={13} className="animate-spin-slow" />
-            <span>APEDA & ISO Certified Premium Exporter</span>
+            <span>APEDA & ISO Certified Premium Exporter — Est. 2026</span>
           </div>
           <div className="flex items-center gap-6">
             <a href={`mailto:${SITE.email}`} className="flex items-center gap-1.5 hover:text-gold-400 transition-colors">
@@ -48,7 +60,7 @@ export default function Navbar() {
         className={cn(
           'sticky top-0 z-50 transition-all duration-500 w-full',
           scrolled
-            ? 'bg-emerald-950/90 backdrop-blur-xl border-b border-white/5 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.3)] py-3 lg:py-4'
+            ? 'nav-glass-scrolled py-2 lg:py-3'
             : 'bg-emerald-950/95 backdrop-blur-md py-4 lg:py-5'
         )}
       >
@@ -61,8 +73,8 @@ export default function Navbar() {
                 <img src="/images/logo.png" alt="Tanisi Impex" className="h-12 lg:h-14 w-auto relative z-10 transition-transform duration-500 group-hover:scale-105" />
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-white font-display font-black text-lg tracking-wide leading-tight group-hover:text-gold-400 transition-colors duration-300">
-                  TANISI IMPEX
+                <h1 className="text-white font-display font-black text-sm lg:text-base tracking-wide leading-tight group-hover:text-gold-400 transition-colors duration-300 whitespace-nowrap">
+                  TANISI IMPEX PVT. LTD.
                 </h1>
                 <p className="text-gold-500 text-[9px] font-accent tracking-widest font-bold uppercase">
                   Global Trade Excellence
@@ -100,7 +112,7 @@ export default function Navbar() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.98 }}
                           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#022c22] border border-gold-500/20 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] overflow-hidden p-2.5 z-50"
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#0B1522] border border-gold-500/20 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] overflow-hidden p-2.5 z-50"
                         >
                           <div className="space-y-1">
                             {link.children.map((child) => {
@@ -167,7 +179,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-[64px] z-40 bg-[#022c22] border-b border-white/10 overflow-hidden lg:hidden"
+            className="fixed inset-x-0 top-[64px] z-40 bg-[#0B1522] border-b border-white/10 overflow-hidden lg:hidden"
           >
             <div className="px-6 py-6 max-h-[70vh] overflow-y-auto space-y-4">
               {NAV_LINKS.map((link) => (
