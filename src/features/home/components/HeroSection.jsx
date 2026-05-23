@@ -168,8 +168,6 @@ export default function HeroSection() {
         </div>
       </Container>
 
-      {/* Elegant smooth bottom wave separation */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#FAF9F6] to-transparent pointer-events-none" />
     </section>
   );
 }

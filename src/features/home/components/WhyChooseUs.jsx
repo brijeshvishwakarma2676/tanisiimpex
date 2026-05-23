@@ -1,74 +1,135 @@
-import { Shield, TrendingDown, Package, Truck, BarChart3, Headphones } from 'lucide-react';
-import { Container, SectionHeader } from '@/components/ui';
-import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations';
-import { WHY_CHOOSE_US } from '@/data';
-
-const iconMap = { Shield, TrendingDown, Package, Truck, BarChart3, Headphones };
-
-const chipLabels = {
-  'Certified Quality': 'ISO Verified',
-  'Competitive Pricing': 'Best-in-Class',
-  'Custom Packaging': 'OEM Ready',
-  'Reliable Logistics': 'On-Time Guaranteed',
-  'Scalable Supply': 'Flexible MOQ',
-  'Dedicated Support': '24 / 7 Active',
-};
+import FlowArt, { FlowSection } from '@/components/ui/story-scroll';
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-section bg-[#FAF9F6] relative overflow-hidden section-glow-bottom">
-      <div className="absolute inset-0 dot-pattern opacity-30 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
-
-      <Container className="relative z-10">
-        <FadeIn>
-          <SectionHeader
-            badge="Institutional Strengths"
-            title="Sovereign Grade Trust & Reliability"
-            subtitle="We guarantee premium, reliable global operations by combining deep Indian production heritage with modern QA frameworks."
+    <FlowArt aria-label="Why Choose Tanisi Impex">
+      {/* SECTION 1 */}
+      <FlowSection aria-label="Institutional Trust" style={{ backgroundColor: '#0B1522', color: '#fff' }}>
+        {/* Cinematic Background Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl lg:rounded-none m-[2vw] lg:m-0">
+          <img 
+            src="https://images.unsplash.com/photo-1586528116311-ad8ed7c80a30?auto=format&fit=crop&w=2000&q=80" 
+            alt="Global Shipping Port" 
+            className="w-full h-full object-cover opacity-40 mix-blend-luminosity scale-105"
           />
-        </FadeIn>
+          {/* Gradient Overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1522] via-[#0B1522]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1522] via-transparent to-transparent" />
+        </div>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {WHY_CHOOSE_US.map((item, i) => {
-            const Icon = iconMap[item.icon];
-            return (
-              <StaggerItem key={i}>
-                <div className="bg-white rounded-3xl p-8 border border-gold-500/10 card-elevated card-shine h-full relative overflow-hidden flex flex-col justify-between group">
-                  {/* Top corner glow on hover */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-gold-500/8 to-transparent rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div className="relative z-10 flex flex-col h-full justify-between">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-400">01 — Institutional Strengths</p>
+          <hr className="my-[2vw] border-none border-t border-white/20" />
+          <div>
+            <h1 className="text-[clamp(3.5rem,10vw,12rem)] font-display font-bold leading-[0.85] uppercase tracking-tight drop-shadow-lg">
+              Sovereign
+              <br />
+              Grade
+              <br />
+              Trust
+            </h1>
+          </div>
+          <hr className="my-[2vw] border-none border-t border-white/20" />
+          <p className="max-w-[50ch] text-[clamp(1rem,2vw,1.5rem)] font-normal leading-relaxed text-slate-300">
+            We guarantee premium, reliable global operations by combining deep Indian production heritage with modern QA frameworks. No compromises.
+          </p>
+        </div>
+      </FlowSection>
 
-                  <div>
-                    <div className="flex justify-between items-start mb-8">
-                      <div className="w-14 h-14 rounded-2xl bg-emerald-950/5 border border-emerald-950/10 flex items-center justify-center group-hover:bg-emerald-950 group-hover:scale-110 transition-all duration-300">
-                        <Icon size={24} className="text-emerald-800 group-hover:text-gold-400 transition-colors duration-300" />
-                      </div>
-                      <span className="chip">{chipLabels[item.title] || 'Verified'}</span>
-                    </div>
+      {/* SECTION 2 */}
+      <FlowSection aria-label="Certified Quality & Logistics" style={{ backgroundColor: '#FAF9F6', color: '#0B1522' }}>
+        <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl lg:rounded-none m-[2vw] lg:m-0">
+          <img 
+            src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=2000&q=80" 
+            alt="Premium Indian Spices" 
+            className="w-full h-full object-cover opacity-[0.15] mix-blend-multiply scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F6] via-[#FAF9F6]/90 to-transparent" />
+        </div>
 
-                    <h3 className="text-lg font-display font-extrabold text-emerald-950 mb-3 tracking-wide group-hover:text-emerald-800 transition-colors">
-                      {item.title}
-                    </h3>
+        <div className="relative z-10 flex flex-col h-full justify-between">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-600">02 — Compliance & Delivery</p>
+          <hr className="my-[2vw] border-none border-t border-[#0B1522]/20" />
+          <div>
+            <h2 className="text-[clamp(3.5rem,10vw,12rem)] font-display font-bold leading-[0.85] uppercase tracking-tight text-[#0B1522]">
+              Global
+              <br />
+              Scale.
+              <br />
+              Local
+              <br />
+              Roots.
+            </h2>
+          </div>
+          <hr className="my-[2vw] border-none border-t border-[#0B1522]/20" />
+          <div className="flex flex-wrap gap-[3vw]">
+            <div className="min-w-[180px] flex-1 bg-white/50 backdrop-blur-md p-6 rounded-2xl border border-slate-200/50 shadow-sm">
+              <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#0B1522]">Certified Quality</p>
+              <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed text-slate-600">
+                ISO, FSSAI, APEDA, and international certifications ensuring the highest product standards.
+              </p>
+            </div>
+            <div className="min-w-[180px] flex-1 bg-white/50 backdrop-blur-md p-6 rounded-2xl border border-slate-200/50 shadow-sm">
+              <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#0B1522]">Reliable Logistics</p>
+              <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed text-slate-600">
+                Partnered with top shipping lines for timely, safe delivery to any port worldwide.
+              </p>
+            </div>
+            <div className="min-w-[180px] flex-1 bg-white/50 backdrop-blur-md p-6 rounded-2xl border border-slate-200/50 shadow-sm">
+              <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#0B1522]">Scalable Supply</p>
+              <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed text-slate-600">
+                From sample orders to full container loads — we scale with your business growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </FlowSection>
 
-                    <p className="text-sm text-emerald-950/55 font-body leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
+      {/* SECTION 3 */}
+      <FlowSection aria-label="Economics & Support" style={{ backgroundColor: '#D5C4A1', color: '#0B1522' }}>
+        <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl lg:rounded-none m-[2vw] lg:m-0">
+          <img 
+            src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=2000&q=80" 
+            alt="Global Export Logistics" 
+            className="w-full h-full object-cover opacity-20 mix-blend-color-burn scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#D5C4A1] via-[#D5C4A1]/90 to-transparent" />
+        </div>
 
-                  <div className="mt-8 pt-4 border-t border-gold-500/8 flex items-center gap-2 text-xs font-semibold tracking-wider font-accent uppercase text-emerald-950/30 group-hover:text-gold-600 transition-colors duration-300">
-                    <span className="relative flex h-2 w-2">
-                      <span className="pulse-live absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
-                    </span>
-                    Compliant Framework
-                  </div>
-                </div>
-              </StaggerItem>
-            );
-          })}
-        </StaggerContainer>
-      </Container>
-    </section>
+        <div className="relative z-10 flex flex-col h-full justify-between">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#0B1522]">03 — Value Proposition</p>
+          <hr className="my-[2vw] border-none border-t border-[#0B1522]/20" />
+          <div>
+            <h2 className="text-[clamp(3.5rem,10vw,12rem)] font-display font-bold leading-[0.85] uppercase tracking-tight text-[#0B1522]">
+              Beyond
+              <br />
+              Borders.
+            </h2>
+          </div>
+          <hr className="my-[2vw] border-none border-t border-[#0B1522]/20" />
+          <div className="flex flex-wrap gap-[3vw]">
+            <div className="min-w-[180px] flex-1 bg-white/30 backdrop-blur-md p-6 rounded-2xl border border-white/40 shadow-sm">
+              <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#0B1522]">Competitive Pricing</p>
+              <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed text-[#0B1522]/80">
+                Direct sourcing from farmers and manufacturers eliminates middlemen, offering best-in-class pricing.
+              </p>
+            </div>
+            <div className="min-w-[180px] flex-1 bg-white/30 backdrop-blur-md p-6 rounded-2xl border border-white/40 shadow-sm">
+              <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#0B1522]">Custom Packaging</p>
+              <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed text-[#0B1522]/80">
+                Private label and OEM packaging solutions tailored to your brand and market requirements.
+              </p>
+            </div>
+            <div className="min-w-[180px] flex-1 bg-white/30 backdrop-blur-md p-6 rounded-2xl border border-white/40 shadow-sm">
+              <p className="mb-2 text-sm font-bold uppercase tracking-wider text-[#0B1522]">Dedicated Support</p>
+              <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed text-[#0B1522]/80">
+                24/7 export advisory and after-sales support with a dedicated account manager.
+              </p>
+            </div>
+          </div>
+        </div>
+      </FlowSection>
+    </FlowArt>
   );
 }
 
