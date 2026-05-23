@@ -75,7 +75,7 @@ export function SectionHeader({ badge, title, subtitle, align = 'center', dark =
       )}
       <h2 className={cn(
         'text-h2 font-display font-extrabold tracking-tight mt-2 mb-4',
-        dark ? 'text-white' : 'text-gray-900'
+        dark ? 'text-white' : 'text-emerald-950'
       )}>
         {title}
       </h2>
@@ -84,7 +84,7 @@ export function SectionHeader({ badge, title, subtitle, align = 'center', dark =
         <p className={cn(
           'text-base lg:text-lg max-w-2xl font-body leading-relaxed',
           align === 'center' && 'mx-auto',
-          dark ? 'text-gray-400' : 'text-gray-600'
+          dark ? 'text-emerald-100/60' : 'text-emerald-950/60'
         )}>
           {subtitle}
         </p>
@@ -98,7 +98,7 @@ export function Card({ children, className = '', hover = true, ...props }) {
   return (
     <div
       className={cn(
-        'bg-white rounded-3xl border border-gray-100/80 overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.02)]',
+        'bg-white rounded-3xl border border-gold-500/10 overflow-hidden shadow-[0_12px_40px_rgba(200,168,80,0.04)]',
         hover && 'hover-lift',
         className
       )}

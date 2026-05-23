@@ -55,10 +55,10 @@ export default function Navbar() {
         <nav className="max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between w-full gap-4 lg:gap-8 xl:gap-12">
             {/* Elegant luxury Logo */}
-            <Link to="/" className="flex items-center gap-3 shrink-0 group">
+            <Link to="/" className="flex items-center gap- shrink-0 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-gold-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <img src="/images/logo.png" alt="Tanisi Impex" className="h-10 lg:h-12 w-auto relative z-10 transition-transform duration-500 group-hover:scale-105" />
+                <img src="/images/logo.png" alt="Tanisi Impex" className="h-12 lg:h-14 w-auto relative z-10 transition-transform duration-500 group-hover:scale-105" />
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-white font-display font-black text-lg tracking-wide leading-tight group-hover:text-gold-400 transition-colors duration-300">
@@ -100,18 +100,26 @@ export default function Navbar() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.98 }}
                           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-emerald-950/98 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.4)] overflow-hidden p-2 z-50"
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#022c22] border border-gold-500/20 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] overflow-hidden p-2.5 z-50"
                         >
                           <div className="space-y-1">
-                            {link.children.map((child) => (
-                              <Link
-                                key={child.path}
-                                to={child.path}
-                                className="block px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider font-accent font-semibold text-white/70 hover:text-gold-400 hover:bg-white/5 transition-colors whitespace-nowrap"
-                              >
-                                {child.label}
-                              </Link>
-                            ))}
+                            {link.children.map((child) => {
+                              const isActive = location.pathname === child.path;
+                              return (
+                                <Link
+                                  key={child.path}
+                                  to={child.path}
+                                  className={cn(
+                                    "block px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider font-accent font-semibold transition-all duration-200 whitespace-nowrap",
+                                    isActive
+                                      ? "text-gold-400 bg-white/10 font-bold shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
+                                      : "text-white/70 hover:text-gold-400 hover:bg-white/5"
+                                  )}
+                                >
+                                  {child.label}
+                                </Link>
+                              );
+                            })}
                           </div>
                         </motion.div>
                       )}
@@ -159,7 +167,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-[64px] z-40 bg-emerald-950/98 backdrop-blur-2xl border-b border-white/10 overflow-hidden lg:hidden"
+            className="fixed inset-x-0 top-[64px] z-40 bg-[#022c22] border-b border-white/10 overflow-hidden lg:hidden"
           >
             <div className="px-6 py-6 max-h-[70vh] overflow-y-auto space-y-4">
               {NAV_LINKS.map((link) => (

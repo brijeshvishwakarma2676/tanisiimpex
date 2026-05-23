@@ -137,13 +137,38 @@ export default function Footer() {
 
       {/* Sub footer */}
       <div className="border-t border-white/5 bg-[#011f18]/30">
-        <Container className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-emerald-100/30">
-          <p className="font-body">
-            © {year} Tanisi Impex. Premium static export directory. Made for worldwide trade partnerships.
-          </p>
-          <div className="flex gap-6">
-            <Link to="/privacy" className="hover:text-gold-400 transition-colors font-body">Privacy Protocol</Link>
-            <Link to="/terms" className="hover:text-gold-400 transition-colors font-body">Terms of Trade</Link>
+        <Container className="py-8 flex flex-col items-center gap-6">
+          {/* Corporate Compliance Strip */}
+          <div className="w-full flex flex-wrap justify-center items-center gap-x-8 gap-y-3 text-[10px] font-accent uppercase tracking-wider text-emerald-100/40 border-b border-white/5 pb-6">
+            <div className="flex items-center gap-2">
+              <span className="text-gold-400 font-bold">GSTIN:</span>
+              <span className="text-white/70 select-all font-mono">27AAMCT5095R1Z7</span>
+            </div>
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/20 hidden md:block" />
+            <div className="flex items-center gap-2">
+              <span className="text-gold-400 font-bold">IEC Code:</span>
+              <span className="text-white/70 select-all font-mono">AAMCT5095R</span>
+            </div>
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/20 hidden md:block" />
+            <div className="flex items-center gap-2">
+              <span className="text-gold-400 font-bold">APEDA Reg:</span>
+              <span className="text-white/70 select-all font-mono">RCMC/APEDA/25809/2025-2026</span>
+            </div>
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/20 hidden md:block" />
+            <div className="flex items-center gap-2">
+              <span className="text-gold-400 font-bold">FSSAI Central Lic:</span>
+              <span className="text-white/70 select-all font-mono">11526998000056</span>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-emerald-100/30">
+            <p className="font-body text-center sm:text-left">
+              © {year} Tanisi Impex Private Limited. Premium static export directory. Made for worldwide trade partnerships.
+            </p>
+            <div className="flex gap-6">
+              <Link to="/privacy" className="hover:text-gold-400 transition-colors font-body">Privacy Protocol</Link>
+              <Link to="/terms" className="hover:text-gold-400 transition-colors font-body">Terms of Trade</Link>
+            </div>
           </div>
         </Container>
       </div>

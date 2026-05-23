@@ -29,9 +29,9 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-premium text-xs font-semibold uppercase tracking-wider font-accent">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-premium text-[10px] sm:text-xs font-semibold uppercase tracking-wider font-accent">
                 <Globe size={13} className="animate-spin-slow text-gold-400" />
-                Empowering Global Supply Chains
+                Global Cargo Dispatch & Domestic Wholesale Logistics
               </span>
             </motion.div>
 
@@ -42,8 +42,8 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              Connecting Global Markets with{' '}
-              <span className="text-gold-gradient block mt-2">India's Finest</span>
+              Shipping Premium Indian Foods & Spices{' '}
+              <span className="text-gold-gradient block mt-2">Worldwide & Pan-India</span>
             </motion.h1>
 
             {/* Elegant refined body copy */}
@@ -53,7 +53,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              Tanisi Impex bridges cultures and businesses by exporting top-tier agricultural, spices, organic, and handcrafted products with absolute compliance and premium global standards.
+              Tanisi Impex is a premier trading house sourcing and shipping India's finest agricultural commodities, pure whole spices, makhana (fox nuts), mushrooms, and handicraft assets. We handle bulk wholesale freight seamlessly—dispatched either to domestic terminals within India or to major container ports globally.
             </motion.p>
 
             {/* CTAs */}
@@ -84,9 +84,9 @@ export default function HeroSection() {
               transition={{ duration: 1, delay: 0.4 }}
             >
               {[
-                { icon: ShieldCheck, label: 'Quality Certified', sub: 'ISO & FSSAI Compliant' },
-                { icon: Award, label: 'Export Capable', sub: 'APEDA Registered' },
-                { icon: Package, label: 'Custom Labeling', sub: 'Tailored Packaging' },
+                { icon: ShieldCheck, label: 'Quality Certified', sub: 'ISO & FSSAI Standards' },
+                { icon: Award, label: 'Freight Ready', sub: 'Global & Pan-India' },
+                { icon: Package, label: 'Commodity Range', sub: 'Spices, Foods & Crafts' },
               ].map(({ icon: Icon, label, sub }) => (
                 <div key={label} className="space-y-1">
                   <div className="flex items-center gap-2">
@@ -124,8 +124,8 @@ export default function HeroSection() {
                 <div className="space-y-4">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/5 space-y-2">
                     <div className="flex justify-between text-xs">
-                      <span className="text-emerald-200/50">Origin</span>
-                      <span className="text-white font-medium">India (Kolkata Port)</span>
+                      <span className="text-emerald-200/50">Consignment Route</span>
+                      <span className="text-white font-medium text-[10px] uppercase tracking-wider">India Hubs ➔ Worldwide & Domestic</span>
                     </div>
                     <div className="relative w-full h-6 mt-2 flex items-center overflow-hidden">
                       {/* Straight tracking line */}
@@ -136,22 +136,22 @@ export default function HeroSection() {
                         initial={{ left: '-10%' }}
                         animate={{ left: '110%' }}
                         transition={{
-                          left: { repeat: Infinity, duration: 4, ease: "linear" }
+                          left: { repeat: Infinity, duration: 5, ease: "linear" }
                         }}
                       >
-                        <Plane size={14} className="transform rotate-45" />
+                        <Globe size={14} className="animate-spin-slow text-gold-400" />
                       </motion.div>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-                      <span className="text-[10px] text-emerald-200/50 uppercase block">Active Hubs</span>
-                      <span className="text-lg font-display font-bold text-white">50+ Ports</span>
+                      <span className="text-[9px] text-emerald-200/50 uppercase block tracking-wider">Global Reach</span>
+                      <span className="text-sm font-display font-bold text-white uppercase">50+ Countries</span>
                     </div>
                     <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-                      <span className="text-[10px] text-emerald-200/50 uppercase block">Compliance</span>
-                      <span className="text-lg font-display font-bold text-white">100% Audit</span>
+                      <span className="text-[9px] text-emerald-200/50 uppercase block tracking-wider">Domestic Distribution</span>
+                      <span className="text-sm font-display font-bold text-white uppercase">Pan-India Cargo</span>
                     </div>
                   </div>
                 </div>

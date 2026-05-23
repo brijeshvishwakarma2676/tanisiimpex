@@ -13,7 +13,7 @@ export default function PublicLayout() {
         <Outlet />
       </main>
       <Footer />
-      <WhatsAppButton />
+      {/* <WhatsAppButton /> */}
     </div>
   );
 }

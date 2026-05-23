@@ -1,13 +1,14 @@
 // ===== Tanisi Impex — Static Site Data =====
 
 export const SITE = {
-  name: 'Tanisi Impex',
+  name: 'Tanisi Impex Private Limited',
   tagline: 'From India to the World!',
   description: 'Premium Indian Export Company — Bridging India\'s Rich Heritage with Global Markets',
-  phone: '+91-9876543210',
-  whatsapp: '919876543210',
-  email: 'info@tanisiimpex.com',
-  address: 'Kolkata, West Bengal, India',
+  phone: '+91-9152121077',
+  whatsapp: '919152121077',
+  email: 'biz@tanisiimpex.com',
+  address: '1403, A Wing, Vasudev Paradise, Kanakia Road, Near Unique Garden, Mira Road East, Thane, Maharashtra – 401107',
+  registeredAddress: 'Shop No. 106, New Cine Prime Mall Premises Co-op Society Ltd, Beverly Park, Kanakia Road, Mira Road East, Thane, Maharashtra – 401107',
   social: {
     linkedin: 'https://linkedin.com/company/tanisiimpex',
     instagram: 'https://instagram.com/tanisiimpex',
@@ -229,16 +230,16 @@ export const INDUSTRIES = [
 
 export const TEAM = [
   {
-    name: 'Vishakha M Agarwal',
-    role: 'Founder & Business Head',
-    bio: 'With deep expertise in export-import operations, sourcing, and brand positioning, Vishakha leads Tanisi Impex\'s global trade strategy.',
+    name: 'Vishakha Manish Agarwal',
+    role: 'Founder & Director',
+    bio: 'With deep expertise in global sourcing, logistics orchestration, and brand positioning, Vishakha guides Tanisi Impex Private Limited\'s primary international operations and corporate strategy.',
     image: '/images/team/vishakha.jpg',
   },
   {
-    name: 'Manish K Agarwal',
-    role: 'Finance & Admin Head',
-    bio: 'Managing financial operations and administrative excellence, Manish ensures robust business foundations for scalable growth.',
-    image: '/images/team/manish.jpg',
+    name: 'Nausheen Farooq Khan',
+    role: 'Director',
+    bio: 'A strategic specialist in corporate compliance and trade governance, Nausheen ensures the company\'s import and export channels comply flawlessly with statutory customs regulations.',
+    image: '/images/team/nausheen.jpg',
   },
 ];
 
