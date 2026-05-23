@@ -369,5 +369,38 @@
     transform: translateY(-4px);
     border-color: rgba(200, 168, 80, 0.2) !important;
   }
+
+  /* Cinematic noise grain overlay */
+  .noise-animated {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background: transparent url("https://res.cloudinary.com/dlnn7gcyu/image/upload/v1716616223/noise-transparent_mvhgsp.png") repeat 0 0;
+    background-size: 250px 250px;
+    animation: noise-animation 0.25s steps(5) infinite;
+    opacity: 0.045;
+    pointer-events: none;
+    will-change: transform;
+    z-index: 99999;
+  }
+
+  @keyframes noise-animation {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-1%, -2%); }
+    20% { transform: translate(-3%, 1%); }
+    30% { transform: translate(1%, -3%); }
+    40% { transform: translate(-1%, 3%); }
+    50% { transform: translate(-2%, 1%); }
+    60% { transform: translate(2%, 0); }
+    70% { transform: translate(0, 2%); }
+    80% { transform: translate(-2%, 0); }
+    90% { transform: translate(1%, 1%); }
+    100% { transform: translate(0, 0); }
+  }
 }
+
 

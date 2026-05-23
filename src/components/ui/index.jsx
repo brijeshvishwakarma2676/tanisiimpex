@@ -1,5 +1,7 @@
 import { cn } from '@/lib/cn';
 export { default as LazySection } from './LazySection';
+export { default as LayoutPreloader } from './layout-preloader';
+
 
 /* ===== Button ===== */
 const buttonVariants = {

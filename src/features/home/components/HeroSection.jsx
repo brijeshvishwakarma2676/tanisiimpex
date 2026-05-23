@@ -1,7 +1,15 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Globe, Shield, Award, Package, ShieldCheck, Plane } from 'lucide-react';
-import { Container, Button } from '@/components/ui';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Globe,
+  Shield,
+  Award,
+  Package,
+  ShieldCheck,
+  Plane,
+} from "lucide-react";
+import { Container, Button } from "@/components/ui";
 
 export default function HeroSection() {
   return (
@@ -40,10 +48,16 @@ export default function HeroSection() {
               className="text-hero font-display text-white tracking-tight leading-none"
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.1,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
-              Shipping Premium Indian Foods & Spices{' '}
-              <span className="text-gold-gradient block mt-2">Worldwide & Pan-India</span>
+              Shipping Premium Indian Foods & Spices{" "}
+              <span className="text-gold-gradient block mt-2">
+                Worldwide & Pan-India
+              </span>
             </motion.h1>
 
             {/* Elegant refined body copy */}
@@ -51,9 +65,17 @@ export default function HeroSection() {
               className="text-base lg:text-lg text-emerald-100/70 font-body leading-relaxed max-w-xl"
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
-              Tanisi Impex is a premier trading house sourcing and shipping India's finest agricultural commodities, pure whole spices, makhana (fox nuts), mushrooms, and handicraft assets. We handle bulk wholesale freight seamlessly—dispatched either to domestic terminals within India or to major container ports globally.
+              Tanisi Impex is a premier trading house sourcing and shipping
+              India's finest agricultural commodities, pure whole spices,
+              makhana (fox nuts), mushrooms, and handicraft assets. We handle
+              bulk wholesale freight seamlessly—dispatched either to domestic
+              terminals within India or to major container ports globally.
             </motion.p>
 
             {/* CTAs */}
@@ -61,12 +83,19 @@ export default function HeroSection() {
               className="flex flex-wrap gap-4 pt-2"
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               <Link to="/bulk-inquiry">
                 <Button size="lg" className="btn-glow group">
                   Request a Quote
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-1 transition-transform duration-300"
+                  />
                 </Button>
               </Link>
               <Link to="/products">
@@ -84,14 +113,28 @@ export default function HeroSection() {
               transition={{ duration: 1, delay: 0.4 }}
             >
               {[
-                { icon: ShieldCheck, label: 'Quality Certified', sub: 'ISO & FSSAI Standards' },
-                { icon: Award, label: 'Freight Ready', sub: 'Global & Pan-India' },
-                { icon: Package, label: 'Commodity Range', sub: 'Spices, Foods & Crafts' },
+                {
+                  icon: ShieldCheck,
+                  label: "Quality Certified",
+                  sub: "ISO & FSSAI Standards",
+                },
+                {
+                  icon: Award,
+                  label: "Freight Ready",
+                  sub: "Global & Pan-India",
+                },
+                {
+                  icon: Package,
+                  label: "Commodity Range",
+                  sub: "Spices, Foods & Crafts",
+                },
               ].map(({ icon: Icon, label, sub }) => (
                 <div key={label} className="space-y-1">
                   <div className="flex items-center gap-2">
                     <Icon size={16} className="text-gold-400" />
-                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-200">{label}</span>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-200">
+                      {label}
+                    </span>
                   </div>
                   <p className="text-xs text-slate-400/60 pl-6">{sub}</p>
                 </div>
@@ -113,8 +156,12 @@ export default function HeroSection() {
               <div className="relative z-10 space-y-6">
                 <div className="flex justify-between items-start">
                   <div className="space-y-1">
-                    <span className="text-[10px] font-semibold uppercase tracking-widest text-gold-400">Export Registry</span>
-                    <h3 className="text-lg font-display font-bold text-white">Tanisi Impex Global</h3>
+                    <span className="text-[10px] font-semibold uppercase tracking-widest text-gold-400">
+                      Export Registry
+                    </span>
+                    <h3 className="text-lg font-display font-bold text-white">
+                      Tanisi Impex Global
+                    </h3>
                   </div>
                   <span className="px-2.5 py-1 rounded bg-gold-500/10 text-gold-400 text-[10px] font-semibold uppercase tracking-wider border border-gold-500/20">
                     Live Status
@@ -124,41 +171,65 @@ export default function HeroSection() {
                 <div className="space-y-4">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/5 space-y-2">
                     <div className="flex justify-between text-xs">
-                      <span className="text-slate-400/50">Consignment Route</span>
-                      <span className="text-white font-medium text-[10px] uppercase tracking-wider">India Hubs ➔ Worldwide & Domestic</span>
+                      <span className="text-slate-400/50">
+                        Consignment Route
+                      </span>
+                      <span className="text-white font-medium text-[10px] uppercase tracking-wider">
+                        India Hubs ➔ Worldwide & Domestic
+                      </span>
                     </div>
                     <div className="relative w-full h-6 mt-2 flex items-center overflow-hidden">
                       {/* Straight tracking line */}
                       <div className="absolute inset-x-0 top-1/2 border-t-[1.5px] border-dashed border-white/20" />
-                      
+
                       <motion.div
                         className="absolute text-gold-400 top-1/2 -translate-y-1/2 flex items-center justify-center bg-[#0B1522] px-1"
-                        initial={{ left: '-10%' }}
-                        animate={{ left: '110%' }}
+                        initial={{ left: "-10%" }}
+                        animate={{ left: "110%" }}
                         transition={{
-                          left: { repeat: Infinity, duration: 5, ease: "linear" }
+                          left: {
+                            repeat: Infinity,
+                            duration: 5,
+                            ease: "linear",
+                          },
                         }}
                       >
-                        <Globe size={14} className="animate-spin-slow text-gold-400" />
+                        <Globe
+                          size={14}
+                          className="animate-spin-slow text-gold-400"
+                        />
                       </motion.div>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-                      <span className="text-[9px] text-slate-400/50 uppercase block tracking-wider">Global Reach</span>
-                      <span className="text-sm font-display font-bold text-white uppercase">50+ Countries</span>
+                      <span className="text-[9px] text-slate-400/50 uppercase block tracking-wider">
+                        Global Reach
+                      </span>
+                      <span className="text-sm font-display font-bold text-white uppercase">
+                        50+ Countries
+                      </span>
                     </div>
                     <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-                      <span className="text-[9px] text-slate-400/50 uppercase block tracking-wider">Domestic Distribution</span>
-                      <span className="text-sm font-display font-bold text-white uppercase">Pan-India Cargo</span>
+                      <span className="text-[9px] text-slate-400/50 uppercase block tracking-wider">
+                        Domestic Distribution
+                      </span>
+                      <span className="text-sm font-display font-bold text-white uppercase">
+                        Pan-India Cargo
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-xs text-slate-400/50">Need direct consultation?</span>
-                  <Link to="/bulk-inquiry" className="text-xs font-semibold text-gold-400 hover:text-gold-300 flex items-center gap-1">
+                  <span className="text-xs text-slate-400/50">
+                    Need direct consultation?
+                  </span>
+                  <Link
+                    to="/bulk-inquiry"
+                    className="text-xs font-semibold text-gold-400 hover:text-gold-300 flex items-center gap-1"
+                  >
                     RFQ Portal <ArrowRight size={14} />
                   </Link>
                 </div>
@@ -167,7 +238,6 @@ export default function HeroSection() {
           </div>
         </div>
       </Container>
-
     </section>
   );
 }

@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Phone, Mail, Globe } from 'lucide-react';
-import { cn } from '@/lib/cn';
-import { NAV_LINKS, SITE } from '@/data';
-import { Button } from '@/components/ui';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ChevronDown, Phone, Mail, Globe } from "lucide-react";
+import { cn } from "@/lib/cn";
+import { NAV_LINKS, SITE } from "@/data";
+import { Button } from "@/components/ui";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,11 +17,12 @@ export default function Navbar() {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       setScrolled(scrollTop > 20);
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       setScrollProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -45,10 +46,16 @@ export default function Navbar() {
             <span>APEDA & ISO Certified Premium Exporter — Est. 2026</span>
           </div>
           <div className="flex items-center gap-6">
-            <a href={`mailto:${SITE.email}`} className="flex items-center gap-1.5 hover:text-gold-400 transition-colors">
+            <a
+              href={`mailto:${SITE.email}`}
+              className="flex items-center gap-1.5 hover:text-gold-400 transition-colors"
+            >
               <Mail size={12} /> {SITE.email}
             </a>
-            <a href={`tel:${SITE.phone}`} className="flex items-center gap-1.5 hover:text-gold-400 transition-colors font-body">
+            <a
+              href={`tel:${SITE.phone}`}
+              className="flex items-center gap-1.5 hover:text-gold-400 transition-colors font-body"
+            >
               <Phone size={12} /> {SITE.phone}
             </a>
           </div>
@@ -58,10 +65,10 @@ export default function Navbar() {
       {/* Main glass navbar */}
       <header
         className={cn(
-          'sticky top-0 z-50 transition-all duration-500 w-full',
+          "sticky top-0 z-50 transition-all duration-500 w-full",
           scrolled
-            ? 'nav-glass-scrolled py-2 lg:py-3'
-            : 'bg-emerald-950/95 backdrop-blur-md py-4 lg:py-5'
+            ? "nav-glass-scrolled py-2 lg:py-3"
+            : "bg-emerald-950/95 backdrop-blur-md py-4 lg:py-5",
         )}
       >
         <nav className="max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12">
@@ -70,7 +77,11 @@ export default function Navbar() {
             <Link to="/" className="flex items-center gap- shrink-0 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-gold-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <img src="/images/logo.png" alt="Tanisi Impex" className="h-12 lg:h-14 w-auto relative z-10 transition-transform duration-500 group-hover:scale-105" />
+                <img
+                  src="/images/logo.png"
+                  alt="Tanisi Impex"
+                  className="h-12 lg:h-14 w-auto relative z-10 transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-white font-display font-black text-sm lg:text-base tracking-wide leading-tight group-hover:text-gold-400 transition-colors duration-300 whitespace-nowrap">
@@ -95,14 +106,20 @@ export default function Navbar() {
                     <Link
                       to={link.path}
                       className={cn(
-                        'flex items-center gap-1 px-3 py-2 rounded-full text-[11px] xl:text-xs font-semibold uppercase tracking-wider font-accent transition-all duration-300 whitespace-nowrap border border-transparent',
-                        location.pathname.startsWith('/products')
-                          ? 'text-gold-400'
-                          : 'text-white/80 hover:text-white'
+                        "flex items-center gap-1 px-3 py-2 rounded-full text-[11px] xl:text-xs font-semibold uppercase tracking-wider font-accent transition-all duration-300 whitespace-nowrap border border-transparent",
+                        location.pathname.startsWith("/products")
+                          ? "text-gold-400"
+                          : "text-white/80 hover:text-white",
                       )}
                     >
                       {link.label}
-                      <ChevronDown size={12} className={cn('transition-transform duration-300', productsOpen && 'rotate-180 text-gold-400')} />
+                      <ChevronDown
+                        size={12}
+                        className={cn(
+                          "transition-transform duration-300",
+                          productsOpen && "rotate-180 text-gold-400",
+                        )}
+                      />
                     </Link>
 
                     <AnimatePresence>
@@ -111,7 +128,10 @@ export default function Navbar() {
                           initial={{ opacity: 0, y: 10, scale: 0.98 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                          transition={{
+                            duration: 0.25,
+                            ease: [0.16, 1, 0.3, 1],
+                          }}
                           className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-[#0B1522] border border-gold-500/20 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] overflow-hidden p-2.5 z-50"
                         >
                           <div className="space-y-1">
@@ -125,7 +145,7 @@ export default function Navbar() {
                                     "block px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider font-accent font-semibold transition-all duration-200 whitespace-nowrap",
                                     isActive
                                       ? "text-gold-400 bg-white/10 font-bold shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
-                                      : "text-white/70 hover:text-gold-400 hover:bg-white/5"
+                                      : "text-white/70 hover:text-gold-400 hover:bg-white/5",
                                   )}
                                 >
                                   {child.label}
@@ -142,22 +162,24 @@ export default function Navbar() {
                     key={link.label}
                     to={link.path}
                     className={cn(
-                      'px-3 py-2 rounded-full text-[11px] xl:text-xs font-semibold uppercase tracking-wider font-accent transition-all duration-300 border whitespace-nowrap',
+                      "px-3 py-2 rounded-full text-[11px] xl:text-xs font-semibold uppercase tracking-wider font-accent transition-all duration-300 border whitespace-nowrap",
                       location.pathname === link.path
-                        ? 'text-gold-400'
-                        : 'text-white/80 hover:text-white'
+                        ? "text-gold-400"
+                        : "text-white/80 hover:text-white",
                     )}
                   >
                     {link.label}
                   </Link>
-                )
+                ),
               )}
             </div>
 
             {/* Premium CTA + Mobile Menu Button */}
             <div className="flex items-center gap-4 shrink-0">
               <Link to="/bulk-inquiry" className="hidden lg:block">
-                <Button size="sm" className="btn-glow">RFQ Portal</Button>
+                <Button size="sm" className="btn-glow">
+                  RFQ Portal
+                </Button>
               </Link>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
